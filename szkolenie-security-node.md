@@ -179,9 +179,9 @@ app.use(
         directives: {
           defaultSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
           scriptSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
-          styleSrc: ['self', 'localhost:*', 'w.x.y.z:*'], 'google.com',
-          fontSrc: ['self', 'localhost:*', 'w.x.y.z:*'], 'google.com',
-          imgSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com',
+          styleSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
+          fontSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
+          imgSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
           connectSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
         },
       }),
