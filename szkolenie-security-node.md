@@ -815,6 +815,7 @@ Nagłówek `HTTP Vary` pełni dwie ważne i przydatne funkcje:
   cat /sys/fs/cgroup/cpuset/cpuset.cpus #6-11 - ids of cores
   ...
   ```
+  > Uwaga też na komendę node.js - os.cpus()
 
 > Pokażemy przykład z kodowaniem, jak można sobie zrobić krzywdę z wydajnością.
 
