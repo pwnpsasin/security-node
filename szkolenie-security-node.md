@@ -769,10 +769,52 @@ Nagłówek `HTTP Vary` pełni dwie ważne i przydatne funkcje:
 - logi zbieramy do systemów sieciowych np. `Sematext`
 - błędy aplikacji od strony przeglądarek Klientów zbieramy sieciowo np. do `Sentry` - i analizujemy - dobre źródło informacji o problemach z aplikacją na różnych urządzeniach.
 - symulujemy często awarie infrastruktury.
+- nie dajcie się oszukać ilościom CPU przez komendę `htop` w środku kontenera
+
+  ```bash
+  docker run --rm --cpuset-cpus="2" -it node:12.18.3-alpine sh
+  ```
+
+  ```bash
+  ...
+  htop    #pokazuje 12 CPU
+  ...
+  nproc #1 core
+  ...
+  cat /sys/fs/cgroup/cpuset/cpuset.cpus #2 - id of core
+  ...
+  ```
+
+  ```bash
+  docker run --rm --cpuset-cpus="5" -it node:12.18.3-alpine sh
+  # to oznacza korzystaj z core od 0 do 5
+  ```
+
+  ```bash
+  ...
+  htop    #pokazuje 12 CPU
+  ...
+  nproc #6 core
+  ...
+  cat /sys/fs/cgroup/cpuset/cpuset.cpus #0-5 - ids of cores
+  ...
+  ```
 
 
+  ```bash
+  docker run --rm --cpuset-cpus="6-11" -it node:12.18.3-alpine sh
+  ## to oznacza korzystaj z core od 6 do 11
+  ```
 
+  ```bash
+  ...
+  htop    #pokazuje 12 CPU
+  ...
+  nproc #6 core
+  ...
+  cat /sys/fs/cgroup/cpuset/cpuset.cpus #6-11 - ids of cores
+  ...
+  ```
 
-
-
+> Pokażemy przykład z kodowaniem, jak można sobie zrobić krzywdę z wydajnością.
 
