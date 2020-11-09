@@ -177,12 +177,12 @@ import helmet from 'helmet';
 app.use(
       helmet.contentSecurityPolicy({
         directives: {
-          defaultSrc: ['self', 'localhost:*', '51.83.226.197:*'],
-          scriptSrc: ['self', 'localhost:*', '51.83.226.197:*'],
-          styleSrc: ['self', 'localhost:*', '51.83.226.197:*'],
-          fontSrc: ['self', 'localhost:*', '51.83.226.197:*'],
-          imgSrc: ['self', 'localhost:*', '51.83.226.197:*'],
-          connectSrc: ['self', 'localhost:*', '51.83.226.197:*'],
+          defaultSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
+          scriptSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
+          styleSrc: ['self', 'localhost:*', 'w.x.y.z:*'], 'google.com',
+          fontSrc: ['self', 'localhost:*', 'w.x.y.z:*'], 'google.com',
+          imgSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com',
+          connectSrc: ['self', 'localhost:*', 'w.x.y.z:*', 'google.com'],
         },
       }),
     );
