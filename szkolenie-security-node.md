@@ -389,14 +389,14 @@ const x = get(req.headers, 'x-custom-mail', null)
 
 ### Metody nadpisane np. DELETE - różne wartości systemowe
 
-    ```js
-    // override
-    app.use(methodOverride('_method')); // In query
-    app.use(methodOverride('X-HTTP-Method')); // Microsoft
-    app.use(methodOverride('X-HTTP-Method-Override')); // Google/GData
-    app.use(methodOverride('X-Method-Override')); // IBM
+  ```js
+  // override
+  app.use(methodOverride('_method')); // In query
+  app.use(methodOverride('X-HTTP-Method')); // Microsoft
+  app.use(methodOverride('X-HTTP-Method-Override')); // Google/GData
+  app.use(methodOverride('X-Method-Override')); // IBM
 
-    ```
+  ```
 
 [Przykład w użyciu - Express](https://raw.githubusercontent.com/pwnpsasin/njs_koszalin_2019/39adfb7405df655d2f74e162b842f908ed9ecc7c/EXAMPLES/S03_EX_04/views/index.hbs)
 ### Blokujemy dostęp do punktów API
@@ -710,8 +710,8 @@ Nagłówek `HTTP Vary` pełni dwie ważne i przydatne funkcje:
 - express-jwt-blacklist [przykład](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/security/expirejwt.md)
 
 ### Tragiczne w skutkach komendy *
-> *niekoniecznie tylko bezpieczeństwa, ale również wydajności ;-)
-- console.log, console.dir, console.warn
+> *niekoniecznie tylko dla bezpieczeństwa, ale również dla wydajności ;-)
+- console.log(), console.dir(), console.warn()
 - setTimeout()
 - setTimeout(0)
 - setInterval()
